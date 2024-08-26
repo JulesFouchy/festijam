@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useCallback } from "react"
+import React, { useState } from "react"
 import Slider from "@mui/material/Slider"
 import Typography from "@mui/material/Typography"
 import { debounce } from "lodash"
