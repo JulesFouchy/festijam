@@ -22,21 +22,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the project
-        run: npm run build
-
-      - name: Setup Git
+      - run: npm ci
+      - run: npm run build
+      # - run: npm test
+      - name: Deploy with gh-pages
         run: |
-          git config --global user.email "jules.fouchy@ntymail.com"
-          git config --global user.name "Jules Fouchy"
-
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
-
-      - name: Clean up gh-pages branch
-        run: git checkout gh-pages && git pull origin gh-pages && git branch -D gh-pages
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
