@@ -5,8 +5,8 @@ import Typography from "@mui/material/Typography"
 import { debounce } from "lodash"
 import axios from "axios"
 
-function App() {
-  const [sliderValue, setSliderValue] = useState(30)
+const MySlider = ({ name, address, min, max, default_value, step }) => {
+  const [sliderValue, setSliderValue] = useState(default_value)
 
   const handleSliderChange = (event, newValue) => {
     setSliderValue(newValue)
@@ -15,9 +15,7 @@ function App() {
 
   const debouncedSendRequest = debounce((value) => {
     axios
-      .get(
-        `http://192.168.1.91:1234/osc?value=${value / 100}&address=slices_count`
-      )
+      .get(`http://192.168.1.91:1234/osc?value=${value}&address=${address}`)
       .then((response) => {
         console.log("Response:", response.data)
       })
@@ -27,18 +25,138 @@ function App() {
   }, 10) // 10ms delay
 
   return (
-    <div style={{ width: 300, margin: "0 auto", textAlign: "center" }}>
-      <Typography variant="h6">Slider Example</Typography>
+    // <div
+    //   style={
+    //     {
+    //       /*  display: "grid", gridColumn: 2 */
+    //     }
+    //   }
+    // >
+    [
+      <Typography variant="h6">{name}</Typography>,
       <Slider
         value={sliderValue}
         onChange={handleSliderChange}
         aria-labelledby="continuous-slider"
-        min={0}
-        max={100}
-      />
-      <Typography variant="body1">Value: {sliderValue}</Typography>
-    </div>
+        min={min}
+        max={max}
+        step={step}
+        style={{ width: 300 }}
+        size="large"
+      />,
+      <Typography variant="body1" style={{ width: "50px" }}>
+        {Math.round(sliderValue * 100) / 100}
+      </Typography>,
+      // </div>
+    ]
   )
+}
+
+function App() {
+  return [
+    <div
+      style={{
+        margin: 0,
+        display: "flex",
+        "align-items": "center",
+        "justify-content": "center",
+        flexDirection: "column",
+      }}
+    >
+      <h1>Coollab</h1>
+      <div
+        style={{
+          display: "grid",
+          "grid-template-columns": "min-content min-content min-content",
+          gap: "15px",
+        }}
+      >
+        <MySlider
+          name="Slices"
+          address="slices_count"
+          min={0}
+          max={10}
+          default_value={5}
+          step={1}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glowdwjfdksjh"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+        <MySlider
+          name="Glow"
+          address="glow"
+          min={0}
+          max={10}
+          default_value={5}
+          step={0.000001}
+        />
+      </div>
+    </div>,
+    <div style={{ position: "fixed", bottom: 0, right: 0 }}>
+      TODO: QR Code Coollab
+    </div>,
+  ]
 }
 
 export default App
