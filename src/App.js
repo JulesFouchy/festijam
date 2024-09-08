@@ -4,6 +4,7 @@ import Slider from "@mui/material/Slider"
 import Typography from "@mui/material/Typography"
 import { debounce } from "lodash"
 import axios from "axios"
+import { Button } from "@mui/material"
 
 const MySlider = ({ name, address, min, max, default_value, step }) => {
   const [sliderValue, setSliderValue] = useState(default_value)
@@ -43,7 +44,11 @@ const MySlider = ({ name, address, min, max, default_value, step }) => {
         step={step}
         style={{ width: 300 }}
         size="large"
+        // scale={(value) => 10 ** value}
       />,
+      <Button onClick={() => handleSliderChange(null, default_value)}>
+        Reset
+      </Button>,
       <Typography variant="body1" style={{ width: "50px" }}>
         {Math.round(sliderValue * 100) / 100}
       </Typography>,
@@ -67,7 +72,8 @@ function App() {
       <div
         style={{
           display: "grid",
-          "grid-template-columns": "min-content min-content min-content",
+          "grid-template-columns":
+            "min-content min-content min-content min-content",
           gap: "15px",
         }}
       >
@@ -76,39 +82,39 @@ function App() {
           address="slices_count"
           min={0}
           max={10}
-          default_value={5}
+          default_value={1}
           step={1}
         />
         <MySlider
-          name="Glow"
-          address="glow"
+          name="Duplicata"
+          address="duplicata"
           min={0}
-          max={10}
-          default_value={5}
+          max={3}
+          default_value={1}
           step={0.000001}
         />
         <MySlider
-          name="Glow"
-          address="glow"
+          name="Distortion"
+          address="distortion"
           min={0}
-          max={10}
-          default_value={5}
+          max={6}
+          default_value={0}
           step={0.000001}
         />
         <MySlider
-          name="Glow"
-          address="glow"
-          min={0}
-          max={10}
-          default_value={5}
+          name="Saturation"
+          address="saturation"
+          min={-1}
+          max={1}
+          default_value={0}
           step={0.000001}
         />
         <MySlider
-          name="Glow"
-          address="glow"
-          min={0}
-          max={10}
-          default_value={5}
+          name="Zoom"
+          address="zoom"
+          min={0.0001}
+          max={1}
+          default_value={1}
           step={0.000001}
         />
         <MySlider
