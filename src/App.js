@@ -113,7 +113,7 @@ function App() {
           name="Zoom"
           address="zoom"
           min={0.0001}
-          max={1}
+          max={5}
           default_value={1}
           step={0.000001}
         />
@@ -125,43 +125,28 @@ function App() {
           default_value={5}
           step={0.000001}
         />
-        {/* <MySlider
-          name="Glow"
-          address="glow"
+        <MySlider
+          name="Disco"
+          address="disco"
           min={0}
-          max={10}
-          default_value={5}
+          max={1.5}
+          default_value={0.1}
           step={0.000001}
         />
         <MySlider
-          name="Glow"
-          address="glow"
+          name="Glitch"
+          address="glitch"
           min={0}
-          max={10}
-          default_value={5}
+          max={20}
+          default_value={0}
           step={0.000001}
         />
-        <MySlider
-          name="Glowdwjfdksjh"
-          address="glow"
-          min={0}
-          max={10}
-          default_value={5}
-          step={0.000001}
-        />
-        <MySlider
-          name="Glow"
-          address="glow"
-          min={0}
-          max={10}
-          default_value={5}
-          step={0.000001}
-        /> */}
       </div>
     </div>,
     <div style={{ position: "fixed", bottom: 0, right: 0 }}>
       TODO: QR Code Coollab
     </div>,
+    // TODO button to randomize all values, and they tween to the new value over 1 or 2 sec
   ]
 }
 
