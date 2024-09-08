@@ -68,7 +68,7 @@ function App() {
         flexDirection: "column",
       }}
     >
-      <h1>Coollab</h1>
+      <h1>TODO petit texte d'explication</h1>
       <div
         style={{
           display: "grid",
@@ -118,14 +118,14 @@ function App() {
           step={0.000001}
         />
         <MySlider
-          name="Glow"
-          address="glow"
-          min={0}
-          max={10}
+          name="Switch"
+          address="switch"
+          min={2}
+          max={15}
           default_value={5}
           step={0.000001}
         />
-        <MySlider
+        {/* <MySlider
           name="Glow"
           address="glow"
           min={0}
@@ -156,7 +156,7 @@ function App() {
           max={10}
           default_value={5}
           step={0.000001}
-        />
+        /> */}
       </div>
     </div>,
     <div style={{ position: "fixed", bottom: 0, right: 0 }}>
