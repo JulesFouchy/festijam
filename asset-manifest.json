@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/festijam/static/css/main.b98cd59e.css",
-    "main.js": "/festijam/static/js/main.d57d7b11.js",
+    "main.css": "/festijam/static/css/main.b8d81ec3.css",
+    "main.js": "/festijam/static/js/main.295f6a07.js",
     "index.html": "/festijam/index.html",
-    "main.b98cd59e.css.map": "/festijam/static/css/main.b98cd59e.css.map",
-    "main.d57d7b11.js.map": "/festijam/static/js/main.d57d7b11.js.map"
+    "main.b8d81ec3.css.map": "/festijam/static/css/main.b8d81ec3.css.map",
+    "main.295f6a07.js.map": "/festijam/static/js/main.295f6a07.js.map"
   },
   "entrypoints": [
-    "static/css/main.b98cd59e.css",
-    "static/js/main.d57d7b11.js"
+    "static/css/main.b8d81ec3.css",
+    "static/js/main.295f6a07.js"
   ]
 }
