@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography"
 import { debounce } from "lodash"
 import axios from "axios"
 import { Button } from "@mui/material"
+import qrcode_image from "./QRCode.png"
 
 const MySlider = ({ name, address, min, max, default_value, step }) => {
   const [sliderValue, setSliderValue] = useState(default_value)
@@ -68,7 +69,7 @@ function App() {
         flexDirection: "column",
       }}
     >
-      <h1>TODO petit texte d'explication</h1>
+      <h1>Contrôlez la vidéo !</h1>
       <div
         style={{
           display: "grid",
@@ -106,7 +107,7 @@ function App() {
           step={0.000001}
         />
         <MySlider
-          name="Kaleidoscope"
+          name="Kaléidoscope"
           address="black_hole"
           min={-4}
           max={8}
@@ -140,7 +141,7 @@ function App() {
       </div>
     </div>,
     <div style={{ position: "fixed", bottom: 0, right: 0 }}>
-      TODO: QR Code Coollab
+      <img src={qrcode_image}></img>
     </div>,
     // TODO button to randomize all values, and they tween to the new value over 1 or 2 sec
   ]
