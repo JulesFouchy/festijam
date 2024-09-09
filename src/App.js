@@ -78,15 +78,7 @@ function App() {
         }}
       >
         <MySlider
-          name="Slices"
-          address="slices_count"
-          min={0}
-          max={10}
-          default_value={1}
-          step={1}
-        />
-        <MySlider
-          name="Duplicata"
+          name="Détails"
           address="duplicata"
           min={0}
           max={3}
@@ -94,18 +86,10 @@ function App() {
           step={0.000001}
         />
         <MySlider
-          name="Distortion"
+          name="Stries"
           address="distortion"
           min={0}
           max={6}
-          default_value={0}
-          step={0.000001}
-        />
-        <MySlider
-          name="Saturation"
-          address="saturation"
-          min={-1}
-          max={1}
           default_value={0}
           step={0.000001}
         />
@@ -118,18 +102,26 @@ function App() {
           step={0.000001}
         />
         <MySlider
-          name="Switch"
-          address="switch"
-          min={2}
-          max={15}
-          default_value={5}
+          name="Kaleidoscope"
+          address="black_hole"
+          min={-4}
+          max={8}
+          default_value={1}
+          step={0.00000001}
+        />
+        <MySlider
+          name="Rotation"
+          address="rotation_speed"
+          min={0}
+          max={0.5}
+          default_value={0}
           step={0.000001}
         />
         <MySlider
           name="Disco"
           address="disco"
           min={0}
-          max={1.5}
+          max={3}
           default_value={0.1}
           step={0.000001}
         />
