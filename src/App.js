@@ -42,14 +42,14 @@ const MySlider = ({ name, address, min, max, default_value, step }) => {
         min={min}
         max={max}
         step={step}
-        style={{ width: 300 }}
+        style={{ width: 700, height: 50 }}
         size="large"
         // scale={(value) => 10 ** value}
       />,
       <Button onClick={() => handleSliderChange(null, default_value)}>
         Reset
       </Button>,
-      <Typography variant="body1" style={{ width: "50px" }}>
+      <Typography variant="body1" style={{ width: "30px" }}>
         {Math.round(sliderValue * 100) / 100}
       </Typography>,
       // </div>
@@ -75,6 +75,10 @@ function App() {
           "grid-template-columns":
             "min-content min-content min-content min-content",
           gap: "15px",
+          //   "place-items": "center",
+
+          "align-items": "center",
+          "justify-items": "start",
         }}
       >
         <MySlider
@@ -118,7 +122,7 @@ function App() {
           step={0.000001}
         />
         <MySlider
-          name="Disco"
+          name="Trippy"
           address="disco"
           min={0}
           max={3}
