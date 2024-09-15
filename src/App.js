@@ -17,7 +17,7 @@ const MySlider = ({ name, address, min, max, default_value, step }) => {
 
   const debouncedSendRequest = debounce((value) => {
     axios
-      .get(`http://192.168.1.91:1234/osc?value=${value}&address=${address}`)
+      .get(`http://192.168.137.136:1234/osc?value=${value}&address=${address}`)
       .then((response) => {
         console.log("Response:", response.data)
       })
@@ -43,7 +43,7 @@ const MySlider = ({ name, address, min, max, default_value, step }) => {
         min={min}
         max={max}
         step={step}
-        style={{ width: 700, height: 50 }}
+        style={{ width: 500, height: 35 }}
         size="large"
         // scale={(value) => 10 ** value}
       />,
@@ -135,6 +135,14 @@ function App() {
           address="glitch"
           min={0}
           max={20}
+          default_value={0}
+          step={0.000001}
+        />
+        <MySlider
+          name="Caméra"
+          address="camera"
+          min={0}
+          max={1}
           default_value={0}
           step={0.000001}
         />
