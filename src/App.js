@@ -7,6 +7,9 @@ import axios from "axios"
 import { Button } from "@mui/material"
 import qrcode_image from "./QRCode.png"
 
+// TODO pouvoir save en PWA
+// TODO nouveau QR code coollab
+
 const MySlider = ({ name, address, min, max, default_value, step }) => {
   const [sliderValue, setSliderValue] = useState(default_value)
 
@@ -17,7 +20,7 @@ const MySlider = ({ name, address, min, max, default_value, step }) => {
 
   const debouncedSendRequest = debounce((value) => {
     axios
-      .get(`http://192.168.137.136:1234/osc?value=${value}&address=${address}`)
+      .get(`http://localhost:1234/set?value=${value}&name=${address}`)
       .then((response) => {
         console.log("Response:", response.data)
       })

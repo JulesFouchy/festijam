@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/festijam/static/css/main.b8d81ec3.css",
+    "main.js": "/festijam/static/js/main.5934c099.js",
+    "index.html": "/festijam/index.html",
+    "main.b8d81ec3.css.map": "/festijam/static/css/main.b8d81ec3.css.map",
+    "main.5934c099.js.map": "/festijam/static/js/main.5934c099.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8d81ec3.css",
+    "static/js/main.5934c099.js"
+  ]
+}
